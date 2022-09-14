@@ -8,7 +8,7 @@ function AddMonthly() {
   return (
     <main>
       <button onClick={onClick} className='bg-red rounded border border-red-dark text-red-dark py-2 px-4'>
-        Add Default Monthly Payements
+        Add Default Monthly Payments
       </button>
     </main>
   );
