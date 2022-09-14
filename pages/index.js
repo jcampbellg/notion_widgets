@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>JC's Life Notion Widgets</title>
+        <title>JC&apos;s Life Notion Widgets</title>
         <meta name="description" content="Notion widgets for me" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -20,4 +20,4 @@ export default function Home() {
       </main>
     </div>
   )
-}
+};
