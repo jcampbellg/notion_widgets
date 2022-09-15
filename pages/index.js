@@ -10,7 +10,7 @@ export default function Home() {
         ¡Hola <span className='font-bold'>Juan Carlos!</span>
       </h1>
       <h1 className='text-lg'>
-        Hoy is <span className='font-bold'>{today}</span>
+        Hoy es <span className='font-bold'>{today}</span>
       </h1>
     </main>
   );
