@@ -13,25 +13,25 @@ export default async function handler(req, res) {
 
   const defaultCCData = [{
     Cuenta: '8a56e0a94bad47a48680aebd55ec9029',
-    Descripción: moment(`${year}-${month}-01`).subtract(1, 'M').format('MMMM YYYY') + ' a ' + moment(`${year}-${month}-01`).format('MMMM YYYY'),
+    Descripción: moment(`${year}-${month}-01`).subtract(1, 'M').format('MMM YYYY') + ' a ' + moment(`${year}-${month}-01`).format('MMM YYYY'),
     Categoria: 'Tarjeta de Credito',
     'Fecha de Corte': moment(`${year}-${month}-09`).format('YYYY-MM-DD'),
     'Fecha de Pago': moment(`${year}-${month}-30`).format('YYYY-MM-DD'),
   }, {
     Cuenta: '4fea622c01254df69b696ae75f97f6d5',
-    Descripción: moment(`${year}-${month}-01`).subtract(1, 'M').format('MMMM YYYY') + ' a ' + moment(`${year}-${month}-01`).format('MMMM YYYY'),
+    Descripción: moment(`${year}-${month}-01`).subtract(1, 'M').format('MMM YYYY') + ' a ' + moment(`${year}-${month}-01`).format('MMM YYYY'),
     Categoria: 'Tarjeta de Credito',
     'Fecha de Corte': moment(`${year}-${month}-09`).format('YYYY-MM-DD'),
     'Fecha de Pago': moment(`${year}-${month}-30`).format('YYYY-MM-DD'),
   }, {
     Cuenta: 'd7aaf12ff5ca4459bb8a6e365324ae02',
-    Descripción: moment(`${year}-${month}-01`).subtract(1, 'M').format('MMMM YYYY') + ' a ' + moment(`${year}-${month}-01`).format('MMMM YYYY'),
+    Descripción: moment(`${year}-${month}-01`).subtract(1, 'M').format('MMM YYYY') + ' a ' + moment(`${year}-${month}-01`).format('MMM YYYY'),
     Categoria: 'Tarjeta de Credito',
     'Fecha de Corte': moment(`${year}-${month}-15`).format('YYYY-MM-DD'),
     'Fecha de Pago': moment(`${year}-${month}-05`).add(1, 'M').format('YYYY-MM-DD'),
   }, {
     Cuenta: 'db745cd910eb4beba09045842b06b5b0',
-    Descripción: moment(`${year}-${month}-01`).subtract(1, 'M').format('MMMM YYYY') + ' a ' + moment(`${year}-${month}-01`).format('MMMM YYYY'),
+    Descripción: moment(`${year}-${month}-01`).subtract(1, 'M').format('MMM YYYY') + ' a ' + moment(`${year}-${month}-01`).format('MMM YYYY'),
     Categoria: 'Tarjeta de Credito',
     'Fecha de Corte': moment(`${year}-${month}-18`).format('YYYY-MM-DD'),
     'Fecha de Pago': moment(`${year}-${month}-12`).add(1, 'M').format('YYYY-MM-DD'),
