@@ -13,28 +13,28 @@ export default function (req, res) {
 
   const defaultCCData = [{
     Cuenta: '8a56e0a94bad47a48680aebd55ec9029',
-    Descripción: 'Pago de ' + moment(`${year}-${month}-01`).format('MMMM'),
+    Descripción: 'Pago de ' + moment(`${year}-${month}-01`).format('MMMM YYYY'),
     Categoria: 'Tarjeta de Credito',
-    endDate: 9,
-    'Fecha de Pago': moment(`${year}-${month}-${30}`).format('YYYY-MM-DD'),
+    'Fecha de Corte': moment(`${year}-${month}-9`).subtract(1, 'M').add(1, 'day').format('YYYY-MM-DD'),
+    'Fecha de Pago': moment(`${year}-${month}-30`).format('YYYY-MM-DD'),
   }, {
     Cuenta: '4fea622c01254df69b696ae75f97f6d5',
-    Descripción: 'Pago de ' + moment(`${year}-${month}-01`).format('MMMM'),
+    Descripción: 'Pago de ' + moment(`${year}-${month}-01`).format('MMMM YYYY'),
     Categoria: 'Tarjeta de Credito',
-    endDate: 9,
-    'Fecha de Pago': moment(`${year}-${month}-${30}`).format('YYYY-MM-DD'),
+    'Fecha de Corte': moment(`${year}-${month}-9`).subtract(1, 'M').add(1, 'day').format('YYYY-MM-DD'),
+    'Fecha de Pago': moment(`${year}-${month}-30`).format('YYYY-MM-DD'),
   }, {
     Cuenta: 'd7aaf12ff5ca4459bb8a6e365324ae02',
-    Descripción: 'Pago de ' + moment(`${year}-${month}-01`).format('MMMM'),
+    Descripción: 'Pago de ' + moment(`${year}-${month}-01`).format('MMMM YYYY'),
     Categoria: 'Tarjeta de Credito',
-    endDate: 15,
-    'Fecha de Pago': moment(`${year}-${month}-${5}`).add(1, 'M').format('YYYY-MM-DD'),
+    'Fecha de Corte': moment(`${year}-${month}-15`).subtract(1, 'M').add(1, 'day').format('YYYY-MM-DD'),
+    'Fecha de Pago': moment(`${year}-${month}-5`).add(1, 'M').format('YYYY-MM-DD'),
   }, {
     Cuenta: 'db745cd910eb4beba09045842b06b5b0',
-    Descripción: 'Pago de ' + moment(`${year}-${month}-01`).format('MMMM'),
+    Descripción: 'Pago de ' + moment(`${year}-${month}-01`).format('MMMM YYYY'),
     Categoria: 'Tarjeta de Credito',
-    endDate: 18,
-    'Fecha de Pago': moment(`${year}-${month}-${12}`).add(1, 'M').format('YYYY-MM-DD'),
+    'Fecha de Corte': moment(`${year}-${month}-18`).subtract(1, 'M').add(1, 'day').format('YYYY-MM-DD'),
+    'Fecha de Pago': moment(`${year}-${month}-12`).add(1, 'M').format('YYYY-MM-DD'),
   }];
 
   const defaultFixData = [{
@@ -84,8 +84,7 @@ export default function (req, res) {
         },
         'Fecha de Corte': {
           date: {
-            start: moment(`${year}-${month}-${d.endDate}`).subtract(1, 'M').add(1, 'day').format('YYYY-MM-DD'),
-            end: moment(`${year}-${month}-${d.endDate}`).format('YYYY-MM-DD'),
+            start: d['Fecha de Corte'],
           }
         },'Fecha de Pago': {
           date: {
