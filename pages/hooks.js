@@ -25,14 +25,6 @@ function hooks() {
     });
   };
 
-  const onHide = () => {
-    fetch(`/api/hidePaid`).then(res => {
-      console.log(res);
-    }).catch(err => {
-      console.error(err);
-    });
-  };
-
   const css = 'bg-red rounded border border-red-dark text-red-dark py-2 px-4 hover:bg-red-dark hover:text-red capitalize';
 
   return (
@@ -43,9 +35,6 @@ function hooks() {
         </button>
         <button onClick={() => onAddDefault(nextMonth.month, nextMonth.year)} className={css}>
           Añadir Pagos Mensuales de {nextMonth.format}
-        </button>
-        <button onClick={onHide} className={css}>
-          Esconder Pagados
         </button>
       </div>
     </main>

@@ -13,48 +13,52 @@ export default function (req, res) {
 
   const defaultCCData = [{
     Cuenta: '8a56e0a94bad47a48680aebd55ec9029',
-    Descripción: 'Pago de Tarjeta de ' + moment(`${year}-${month}-01`).format('MMMM'),
+    Descripción: 'Pago de ' + moment(`${year}-${month}-01`).format('MMMM'),
     Categoria: 'Tarjeta de Credito',
-    endDate: 9
+    endDate: 9,
+    'Fecha de Pago': moment(`${year}-${month}-${30}`).format('YYYY-MM-DD'),
   }, {
     Cuenta: '4fea622c01254df69b696ae75f97f6d5',
-    Descripción: 'Pago de Tarjeta de ' + moment(`${year}-${month}-01`).format('MMMM'),
+    Descripción: 'Pago de ' + moment(`${year}-${month}-01`).format('MMMM'),
     Categoria: 'Tarjeta de Credito',
-    endDate: 9
+    endDate: 9,
+    'Fecha de Pago': moment(`${year}-${month}-${30}`).format('YYYY-MM-DD'),
   }, {
     Cuenta: 'd7aaf12ff5ca4459bb8a6e365324ae02',
-    Descripción: 'Pago de Tarjeta de ' + moment(`${year}-${month}-01`).format('MMMM'),
+    Descripción: 'Pago de ' + moment(`${year}-${month}-01`).format('MMMM'),
     Categoria: 'Tarjeta de Credito',
-    endDate: 15
+    endDate: 15,
+    'Fecha de Pago': moment(`${year}-${month}-${5}`).add(1, 'M').format('YYYY-MM-DD'),
   }, {
     Cuenta: 'db745cd910eb4beba09045842b06b5b0',
-    Descripción: 'Pago de Tarjeta de ' + moment(`${year}-${month}-01`).format('MMMM'),
+    Descripción: 'Pago de ' + moment(`${year}-${month}-01`).format('MMMM'),
     Categoria: 'Tarjeta de Credito',
-    endDate: 18
+    endDate: 18,
+    'Fecha de Pago': moment(`${year}-${month}-${12}`).add(1, 'M').format('YYYY-MM-DD'),
   }];
 
   const defaultFixData = [{
     Descripción: 'ASI Network',
-    Categoria: ['Fijo', 'Internet'],
+    Categoria: ['Pago Manual', 'Fijo', 'Internet'],
     Fecha: moment(`${year}-${month}-01`).format('YYYY-MM-DD'),
   }, {
     Descripción: 'Tigo Internet',
-    Categoria: ['Fijo', 'Internet'],
+    Categoria: ['Pago Manual', 'Fijo', 'Internet'],
     Fecha: moment(`${year}-${month}-01`).format('YYYY-MM-DD'),
   }, {
     Descripción: 'Claro Mireya',
     Cuenta: '49e9ad9d23f94605bc955098fcc5a24d',
-    Categoria: ['Fijo', 'Celular'],
+    Categoria: ['Pago Manual', 'Fijo', 'Celular'],
     Fecha: moment(`${year}-${month}-01`).format('YYYY-MM-DD'),
   }, {
     Descripción: 'Oficina',
     Cuenta: '67b23808d82b4269951c5ed6ba6e11b0',
-    Categoria: ['Fijo', 'Renta'],
+    Categoria: ['Pago Manual', 'Fijo', 'Renta'],
     Fecha: moment(`${year}-${month}-01`).format('YYYY-MM-DD'),
     'Monto USD': 200
   }, {
-    Descripción: 'Pago ' + moment(`${year}-${month}-05`).format('MMMM') + ' del Terreno',
-    Categoria: ['Fijo', 'Deuda'],
+    Descripción: 'Pago del Terreno',
+    Categoria: ['Pago Manual', 'Fijo', 'Deuda'],
     Cuenta: '49d8f70129b1496bbae760a16c537d81',
     Fecha: moment(`${year}-${month}-05`).format('YYYY-MM-DD'),
     'Monto USD': 1000
@@ -82,6 +86,10 @@ export default function (req, res) {
           date: {
             start: moment(`${year}-${month}-${d.endDate}`).subtract(1, 'M').add(1, 'day').format('YYYY-MM-DD'),
             end: moment(`${year}-${month}-${d.endDate}`).format('YYYY-MM-DD'),
+          }
+        },'Fecha de Pago': {
+          date: {
+            start: d['Fecha de Pago']
           }
         },
         Categoria: {
