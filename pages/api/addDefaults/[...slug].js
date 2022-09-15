@@ -151,8 +151,7 @@ export default async function handler(req, res) {
   Promise.all(callMap).then(() => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-    res.setHeader('Cache-Control', 'max-age=180000');
-    res.send(JSON.stringify({succeed: true}));
+    res.json({succeed: true});
   }).catch((err) => {
     res.json(err);
     res.status(405).end();

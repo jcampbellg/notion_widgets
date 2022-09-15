@@ -26,8 +26,7 @@ export default function handler(req, res) {
 
 		res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-    res.setHeader('Cache-Control', 'max-age=180000');
-    res.send(JSON.stringify(response.results));
+		res.json(response.results);
 	}).catch(err => {
 		res.json(err);
 		res.status(405).end();
