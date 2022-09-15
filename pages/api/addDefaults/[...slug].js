@@ -3,7 +3,7 @@ import moment from 'moment';
 import 'moment/locale/es';
 moment.locale('es');
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const { slug } = req.query
   const [month, year] = slug;
   
@@ -13,25 +13,25 @@ export default function handler(req, res) {
 
   const defaultCCData = [{
     Cuenta: '8a56e0a94bad47a48680aebd55ec9029',
-    Descripción: 'Pago de ' + moment(`${year}-${month}-01`).format('MMMM YYYY'),
+    Descripción: moment(`${year}-${month}-01`).subtract(1, 'M').format('MMMM YYYY') + ' a ' + moment(`${year}-${month}-01`).format('MMMM YYYY'),
     Categoria: 'Tarjeta de Credito',
     'Fecha de Corte': moment(`${year}-${month}-09`).format('YYYY-MM-DD'),
     'Fecha de Pago': moment(`${year}-${month}-30`).format('YYYY-MM-DD'),
   }, {
     Cuenta: '4fea622c01254df69b696ae75f97f6d5',
-    Descripción: 'Pago de ' + moment(`${year}-${month}-01`).format('MMMM YYYY'),
+    Descripción: moment(`${year}-${month}-01`).subtract(1, 'M').format('MMMM YYYY') + ' a ' + moment(`${year}-${month}-01`).format('MMMM YYYY'),
     Categoria: 'Tarjeta de Credito',
     'Fecha de Corte': moment(`${year}-${month}-09`).format('YYYY-MM-DD'),
     'Fecha de Pago': moment(`${year}-${month}-30`).format('YYYY-MM-DD'),
   }, {
     Cuenta: 'd7aaf12ff5ca4459bb8a6e365324ae02',
-    Descripción: 'Pago de ' + moment(`${year}-${month}-01`).format('MMMM YYYY'),
+    Descripción: moment(`${year}-${month}-01`).subtract(1, 'M').format('MMMM YYYY') + ' a ' + moment(`${year}-${month}-01`).format('MMMM YYYY'),
     Categoria: 'Tarjeta de Credito',
     'Fecha de Corte': moment(`${year}-${month}-15`).format('YYYY-MM-DD'),
-    'Fecha de Pago': moment(`${year}-${month}-5`).add(1, 'M').format('YYYY-MM-DD'),
+    'Fecha de Pago': moment(`${year}-${month}-05`).add(1, 'M').format('YYYY-MM-DD'),
   }, {
     Cuenta: 'db745cd910eb4beba09045842b06b5b0',
-    Descripción: 'Pago de ' + moment(`${year}-${month}-01`).format('MMMM YYYY'),
+    Descripción: moment(`${year}-${month}-01`).subtract(1, 'M').format('MMMM YYYY') + ' a ' + moment(`${year}-${month}-01`).format('MMMM YYYY'),
     Categoria: 'Tarjeta de Credito',
     'Fecha de Corte': moment(`${year}-${month}-18`).format('YYYY-MM-DD'),
     'Fecha de Pago': moment(`${year}-${month}-12`).add(1, 'M').format('YYYY-MM-DD'),
@@ -152,7 +152,7 @@ export default function handler(req, res) {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     res.setHeader('Cache-Control', 'max-age=180000');
-    res.end(JSON.stringify({succeed: true}));
+    res.send(JSON.stringify({succeed: true}));
   }).catch((err) => {
     res.json(err);
     res.status(405).end();

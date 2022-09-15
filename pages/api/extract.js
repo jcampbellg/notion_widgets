@@ -3,9 +3,7 @@ import moment from 'moment';
 import 'moment/locale/es';
 moment.locale('es');
 
-export default function (req, res) {
-  const { slug } = req.query
-  
+export default function handler(req, res) {
   const notion = new Client({auth: process.env.notionSecret});
   const resumenDB = 'b0bfc4bf3b3243e7bbb0710955860f3c';
   const transDB = '3f05558d142644a29acb475d47f68494';
@@ -29,7 +27,7 @@ export default function (req, res) {
 		res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     res.setHeader('Cache-Control', 'max-age=180000');
-    res.end(JSON.stringify(response.results));
+    res.send(JSON.stringify(response.results));
 	}).catch(err => {
 		res.json(err);
 		res.status(405).end();
