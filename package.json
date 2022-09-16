@@ -11,7 +11,6 @@
   "dependencies": {
     "@notionhq/client": "^2.2.0",
     "autoprefixer": "^10.4.10",
-    "bayes-multiple-categories": "^1.0.2",
     "csv-parser": "^3.0.0",
     "moment": "^2.29.4",
     "next": "12.3.0",

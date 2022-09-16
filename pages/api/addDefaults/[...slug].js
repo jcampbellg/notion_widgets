@@ -62,7 +62,7 @@ export default async function handler(req, res) {
     Cuenta: '49d8f70129b1496bbae760a16c537d81',
     Fecha: moment(`${year}-${month}-05`).format('YYYY-MM-DD'),
     'Monto USD': 1000
-  }]
+  }];
 
   const callMap = defaultCCData.map(d => {
     return notion.pages.create({

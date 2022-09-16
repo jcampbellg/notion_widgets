@@ -55,7 +55,8 @@ export default async function handler(req, res) {
       }
     });
 
-    await Promise.all(info.transactions.map(async t => {
+    for (let i = 0; i < info.transactions.length; i++) {
+      const t = info.transactions[i];
       await notion.pages.create({
         parent: {
           database_id: transDB
@@ -91,9 +92,7 @@ export default async function handler(req, res) {
           }
         }
       });
-
-      return t;
-    }));
+    }
 
     return {
       ...d,
