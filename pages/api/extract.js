@@ -15,9 +15,9 @@ export default async function handler(req, res) {
 	const query = await notion.databases.query({
 		database_id: resumenDB,
 		filter: {
-			property: 'Pagado',
+			property: 'Extraer',
 			checkbox: {
-				equals: false
+				equals: true
 			}
 		}
 	});
@@ -45,6 +45,9 @@ export default async function handler(req, res) {
           date: {
             start: info.dueDate
           }
+        },
+        'Extraer': {
+          checkbox: false
         },
         'Monto HNL': {
           number: info.balance.hnl
