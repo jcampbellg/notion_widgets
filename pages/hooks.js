@@ -25,6 +25,14 @@ function hooks() {
     });
   };
 
+  const onExtract = () => {
+    fetch(`/api/extract`).then(res => {
+      console.log(res);
+    }).catch(err => {
+      console.error(err);
+    });
+  };
+
   const css = 'bg-red rounded border border-red-dark text-red-dark py-2 px-4 hover:bg-red-dark hover:text-red capitalize';
 
   return (
@@ -36,7 +44,7 @@ function hooks() {
         <button onClick={() => onAddDefault(nextMonth.month, nextMonth.year)} className={css}>
           Añadir Pagos Mensuales de {nextMonth.format}
         </button>
-        <button className={css}>
+        <button onClick={onExtract} className={css}>
           Extraer Transaciones
         </button>
       </div>
