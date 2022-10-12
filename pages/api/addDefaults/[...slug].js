@@ -41,10 +41,21 @@ export default async function handler(req, res) {
     Descripción: 'ASI Network',
     Categoria: ['Pago Manual', 'Fijo', 'Internet'],
     Fecha: moment(`${year}-${month}-01`).format('YYYY-MM-DD'),
+    'Monto HNL': 1149.99
+  }, {
+    Descripción: 'Agua de SPS',
+    Categoria: ['Pago Manual', 'Fijo', 'Utilidad'],
+    Fecha: moment(`${year}-${month}-01`).format('YYYY-MM-DD')
+  }, {
+    Descripción: 'Coperativa',
+    Categoria: ['Pago Manual', 'Ahorro', 'Fijo'],
+    Fecha: moment(`${year}-${month}-01`).format('YYYY-MM-DD'),
+    'Monto HNL': 1000
   }, {
     Descripción: 'Tigo Internet',
     Categoria: ['Pago Manual', 'Fijo', 'Internet'],
     Fecha: moment(`${year}-${month}-01`).format('YYYY-MM-DD'),
+    'Monto HNL': 980.68
   }, {
     Descripción: 'Claro Mireya',
     Cuenta: '49e9ad9d23f94605bc955098fcc5a24d',

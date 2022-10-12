@@ -6,6 +6,8 @@ module.exports = {
   ],
   theme: {
     colors: {
+      white: '#FFF',
+      dark: '#37352F',
       default: {
         dark: '#37352F',
         DEFAULT: '#FFFFFF'
