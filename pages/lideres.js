@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-function liders() {
+function Lideres() {
   const [done, setDone] = useState(0);
   const nombre = useRef(null);
   const correo = useRef(null);
@@ -98,4 +98,4 @@ function liders() {
   );
 };
 
-export default liders;
+export default Lideres;

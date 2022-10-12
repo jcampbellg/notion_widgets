@@ -2,7 +2,7 @@ import moment from 'moment';
 import 'moment/locale/es';
 moment.locale('es');
 
-function hooks() {
+function Hooks() {
   const today = moment();
   const nextToday =moment().add(1, 'M');
 
@@ -52,4 +52,4 @@ function hooks() {
   );
 };
 
-export default hooks;
+export default Hooks;
