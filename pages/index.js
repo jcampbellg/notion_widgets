@@ -15,7 +15,7 @@ export default function Home() {
         Hoy es <span className='font-bold'>{today}</span>
       </h1>
       <h1 className='text-lg'>
-        Falta <span className='font-bold'>{toWedding} días para la boda</span>
+        Falta <span className='font-bold'>{toWedding} días</span> para la boda
       </h1>
     </main>
   );
