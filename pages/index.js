@@ -3,7 +3,9 @@ import 'moment/locale/es';
 moment.locale('es');
 
 export default function Home() {
-  const today = moment().format('MMMM D YYYY');
+  const todayM = moment()
+  const today = todayM.format('MMMM D YYYY')
+  const toWedding = moment('12-16-2023 6:00 PM', 'MM-DD-YYYY hh:mm A').diff(todayM, 'days')
   return (
     <main>
       <h1 className='text-lg'>
@@ -11,6 +13,9 @@ export default function Home() {
       </h1>
       <h1 className='text-lg'>
         Hoy es <span className='font-bold'>{today}</span>
+      </h1>
+      <h1 className='text-lg'>
+        Falta <span className='font-bold'>{toWedding} días para la boda</span>
       </h1>
     </main>
   );
